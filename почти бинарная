@@ -1,0 +1,73 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+   int arr[5][5];
+   int con=1;
+   int number;
+   
+   for(int i=0; i<5; i++){
+       for(int y=0; y<5; y++){
+           arr[i][y]=con;
+           con++;
+       }
+   }
+   
+   for (int i=0; i<5; i++){
+        for(int y=0; y<5; y++){
+            cout << arr[i][y] << setw(4);
+        }
+        cout << "\n";
+   }
+   
+   bool jester_shild=true;
+   
+   do{
+    cout << "\nwant number\n";
+    cin >> number;
+    if(number>=1 && number<=25){
+            jester_shild=false;
+    }
+   }while(jester_shild==true);
+   
+   //int mid=arr[0][0]+arr[4][4]/2;
+   
+   int arr1[25];
+   int n=0;
+   for(int i=0; i<5; i++){
+       for(int y=0; y<5; y++){
+           arr1[n]=arr[i][y];
+           n++;
+       }
+   }
+   
+   for(int i=0; i<25; i++){
+       cout<<arr1[i];
+   }
+   
+   int mid=arr1[n]/2;
+   bool sort=true;
+   do{
+    if(mid>number){
+       mid=mid/2;
+       cout<<mid;
+    }
+    if(mid<number){
+        mid=arr1[mid-1]+arr1[n]/2;
+        cout<<mid;
+    }
+    if(mid==number){
+        cout<<mid;
+        sort=false;
+    }
+   }while(sort==true);
+   
+   
+   //cout<<"\n"<<mid;
+   
+
+    return 0;
+}
