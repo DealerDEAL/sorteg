@@ -80,7 +80,7 @@ int main()
     }while(sort==true);
    }
    
-   cout<<"exelent";
+   cout<<"\n"<<"exelent";
    
    
    
